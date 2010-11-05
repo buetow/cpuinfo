@@ -1,6 +1,7 @@
 #!/bin/sh
 
-# (c) Paul Buetow
+# cpuinfo v0.1 
+# 2010 (c) Paul Buetow
 
 gawk -F: '
 	function say ( str ) {
