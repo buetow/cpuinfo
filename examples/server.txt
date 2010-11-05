@@ -1,0 +1,15 @@
+cpuinfo (c) 2010 Paul Buetow
+
+ Intel(R) Core(TM) i7 CPU 920 @ 2.67GHz GenuineIntel 8192 KB cache
+
+p = 001 Physical processors
+c = 004 Cores @ each physical processor
+s = 001 Siblings (Hyper-Threading enabled if s != c)
+v = 008 [v = p*c*(s != c ? 2 : 1)] Total processors (including virtual)
+ Hyper-Threading is enabled
+
+0002673 MHz each core
+0010693 MHz total
+0005348 Bogomips each processor (including virtual)
+0042787 Bogomips total
+

@@ -1,0 +1,13 @@
+ Intel(R) Xeon(R) CPU E5530 @ 2.40GHz GenuineIntel 8192 KB cache
+
+p = 002 Physical processors
+c = 004 Cores @ each physical processor
+s = 008 Siblings (Hyper-Threading enabled if s != c)
+v = 016 [v = p*c*(s != c ? 2 : 1)] Total processors (including virtual)
+ Hyper-Threading is enabled
+
+0002400 MHz each core
+0019200 MHz total
+0004799 Bogomips each processor (including virtual)
+0076789 Bogomips total
+

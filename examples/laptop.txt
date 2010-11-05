@@ -1,0 +1,15 @@
+cpuinfo (c) 2010 Paul Buetow
+
+ Intel(R) Core(TM)2 Duo CPU P8400 @ 2.26GHz GenuineIntel 3072 KB cache
+
+p = 001 Physical processors
+c = 002 Cores @ each physical processor
+s = 002 Siblings (Hyper-Threading enabled if s != c)
+v = 002 [v = p*c*(s != c ? 2 : 1)] Total processors (including virtual)
+ Hyper-Threading is disabled
+
+0001600 MHz each core
+0003200 MHz total
+0004522 Bogomips each processor (including virtual)
+0009044 Bogomips total
+
