@@ -47,7 +47,7 @@ gawk -F: '
 		say( sprintf("%s = %.3d %s", "p", physical_cpus, "Physical processors") )
 		say( sprintf("%s = %.3d %s", "c", alength(core_id), "Cores @ each physical processor" ) )
 		say( sprintf("%s = %.3d %s", "s", info["siblings"], "Siblings (Hyper-Threading enabled if s != c)") )
-		say( sprintf("%s = %.3d [v = p*c*(s != c ? 2 : 1)] %s", "v", count["processor"], "Total processors (including virtual)") )
+		say( sprintf("%s = %.3d [v = p*c*(s != c ? 2 : 1)] %s", "v", count["processor"], "Total logical CPUs") )
 		say( " Hyper-Threading is " ( ht ? "enabled" : "disabled" ) )
 		say()
 
