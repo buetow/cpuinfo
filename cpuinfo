@@ -22,7 +22,7 @@ gawk -F: '
 	}
 
 	BEGIN {
-		say( "cpuinfo (c) 2010 Paul Buetow" )
+		say( "cpuinfo (c) 0.2-pre1 2010 Paul Buetow" )
 		say()
 	}
 
