@@ -2,4 +2,4 @@ cpuinfo (1.0.0) stable; urgency=low
 
   * Initial Debian package of cpuinfo.
 
- -- Paul Buetow <paul@buetow.org>  Fri, 26 Jul 2013 09:08:03 +0200
+ -- Paul Buetow <paul@buetow.org>  Fri, 26 Jul 2013 23:08:54 +0200

@@ -33,10 +33,13 @@ documentation:
 
 # Build a debian package (don't sign it, modify the arguments if you want to sign it)
 deb: all
-	dpkg-buildpackage -uc -us
+	dpkg-buildpackage 
 
 dch: 
 	dch -i
+
+dput:
+	dput wheezy-buetowdotorg ../$(NAME)_$$(cat ./.version)_amd64.changes
 
 release: dch deb 
 	bash -c "git tag $$(cat .version)"
