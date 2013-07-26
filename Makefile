@@ -3,8 +3,9 @@ all: version documentation build
 
 # Builds the project. Since this is only a fake project, it just copies a script.
 build:
-	test ! -d ./bin && mkdir ./bin
-	cp -p ./src/$(NAME) ./bin/$(NAME)
+	test ! -d ./bin && mkdir ./bin || exit 0
+	sed "s/VERSION/$$(cat .version)/" src/$(NAME) > ./bin/$(NAME)
+	chmod 755 ./bin/$(NAME)
 	
 # 'install' installes a fake-root, which will be used to build the Debian package
 # $DESTDIR is actually set by the Debian tools.
@@ -16,7 +17,7 @@ deinstall:
 	test ! -z "$(DESTDIR)" && test -f $(DESTDIR)/usr/bin/$(NAME) && rm $(DESTDIR)/usr/bin/$(NAME) || exit 0
 
 clean:
-	test -d ./bin && rm -Rf ./bin
+	test -d ./bin && rm -Rf ./bin || exit 0
 
 # ADDITIONAL RULES:
 
