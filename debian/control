@@ -1,0 +1,16 @@
+Source: cpuinfo
+Section: net
+Priority: optional
+Maintainer: Paul Buetow <paul@buetow.org>
+Build-Depends: perl, make
+Standards-Version: 3.9.2
+Homepage: http://cpuinfo.buetow.org
+Vcs-Git: git://git.bueto.org/cpuinfo
+Vcs-Browser: http://web.buetow.org/git/?p=cpuinfo.git;a=summary
+
+Package: cpuinfo
+Architecture: all
+Depends: ${shlibs:Depends}
+Description: A tiny AWK script to print out CPU infos.
+ This is a tiny AWK script to print out CPU infos. All infos are gathered from
+ the procfs.

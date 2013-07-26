@@ -1,0 +1,18 @@
+NAME
+    Cbars - A small and humble tool to observe server loads
+
+SYNOPSIS
+    cpuinfo [LIST OF HOSTNAMES]
+
+  Tested platforms
+    This version of Cbars has only been tested on Debian GNU/Linux Wheezy.
+
+    There is no release made yet atm. So please come back later and don't
+    use this yet.
+
+LICENSE
+    See package description or project website.
+
+AUTHOR
+    Paul Buetow - <http://cpuinfo.buetow.org>
+
