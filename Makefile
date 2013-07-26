@@ -3,22 +3,20 @@ all: version documentation build
 
 # Builds the project. Since this is only a fake project, it just copies a script.
 build:
-	cp -p ./src/$(NAME) bin/$(NAME)
+	test ! -d ./bin && mkdir ./bin
+	cp -p ./src/$(NAME) ./bin/$(NAME)
 	
 # 'install' installes a fake-root, which will be used to build the Debian package
 # $DESTDIR is actually set by the Debian tools.
 install:
 	test ! -d $(DESTDIR)/usr/bin && mkdir -p $(DESTDIR)/usr/bin || exit 0
-	test ! -d $(DESTDIR)/usr/share/$(NAME) && mkdir -p $(DESTDIR)/usr/share/$(NAME) || exit 0
 	cp ./bin/* $(DESTDIR)/usr/bin
-	#cp -r ./lib $(DESTDIR)/usr/share/$(NAME)/lib
 
 deinstall:
 	test ! -z "$(DESTDIR)" && test -f $(DESTDIR)/usr/bin/$(NAME) && rm $(DESTDIR)/usr/bin/$(NAME) || exit 0
-	test ! -z "$(DESTDIR)/usr/share/$(NAME)" && -d $(DESTDIR)/usr/share/$(NAME) && rm -r $(DESTDIR)/usr/share/$(NAME) || exit 0
 
 clean:
-	rm bin/*
+	test -d ./bin && rm -Rf ./bin
 
 # ADDITIONAL RULES:
 

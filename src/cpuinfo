@@ -3,64 +3,64 @@
 # (c) Paul Buetow
 
 gawk -F: '
-	function say ( str ) {
-		gsub(/ +/, " ", str) 
-		printf "%s\n", str
-	}
+  function say ( str ) {
+    gsub(/ +/, " ", str) 
+    printf "%s\n", str
+  }
 
-	# Newer versions of GAWK can use the built in length function instead
-	function alength ( arr ) {
-  		len = 0
-		for (var in arr)
-     		len++
-		return len
-	}
+  # Newer versions of GAWK can use the built in length function instead
+  function alength ( arr ) {
+      len = 0
+    for (var in arr)
+        len++
+    return len
+  }
 
-	function alength_min_1 ( arr ) {
-	   	len = alength(arr)
-		return len ? len : 1
-	}
+  function alength_min_1 ( arr ) {
+      len = alength(arr)
+    return len ? len : 1
+  }
 
-	BEGIN {
-		say( "cpuinfo (c) 0.2-pre1 2010 Paul Buetow" )
-		say()
-	}
+  BEGIN {
+    say( "cpuinfo (c) VERSION Paul Buetow" )
+    say()
+  }
 
-	$1 ~ /^core id/ { core_id[$2]++ }
-	$1 ~ /^physical id/ { physical_id[$2]++ }
-	$1 ~ /^processor/ { count["processor"]++ }
+  $1 ~ /^core id/ { core_id[$2]++ }
+  $1 ~ /^physical id/ { physical_id[$2]++ }
+  $1 ~ /^processor/ { count["processor"]++ }
 
-	{
-		key = $1
-		gsub(/[ \t]+/, "", key) 
-		info[key] = $2
-	}
+  {
+    key = $1
+    gsub(/[ \t]+/, "", key) 
+    info[key] = $2
+  }
 
-	END {
-		ht = info["siblings"] != alength(core_id)
-		physical_cpus = alength(physical_id) ? alength(physical_id) : 1
-		
+  END {
+    ht = info["siblings"] != alength(core_id)
+    physical_cpus = alength(physical_id) ? alength(physical_id) : 1
+    
 
-		say( info["modelname"] " " info["vendor_id"] " " info["cachesize"] " cache")
-		say()
+    say( info["modelname"] " " info["vendor_id"] " " info["cachesize"] " cache")
+    say()
 
-		say( sprintf("%s = %.3d %s", "p", physical_cpus, "Physical processors") )
-		say( sprintf("%s = %.3d %s", "c", alength(core_id), "Cores" ) )
-		say( sprintf("%s = %.3d %s", "s", info["siblings"], "Siblings (Hyper-Threading enabled if s != c)") )
-		say( sprintf("%s = %.3d [v = p*c*(s != c ? 2 : 1)] %s", "v", count["processor"], "Total logical CPUs") )
-		say( " Hyper-Threading is " ( ht ? "enabled" : "disabled" ) )
-		say()
+    say( sprintf("%s = %.3d %s", "p", physical_cpus, "Physical processors") )
+    say( sprintf("%s = %.3d %s", "c", alength(core_id), "Cores" ) )
+    say( sprintf("%s = %.3d %s", "s", info["siblings"], "Siblings (Hyper-Threading enabled if s != c)") )
+    say( sprintf("%s = %.3d [v = p*c*(s != c ? 2 : 1)] %s", "v", count["processor"], "Total logical CPUs") )
+    say( " Hyper-Threading is " ( ht ? "enabled" : "disabled" ) )
+    say()
 
-		if ( alength(core_id) )
-			say( sprintf("%.7d %s", info["cpuMHz"], "MHz each core") )
+    if ( alength(core_id) )
+      say( sprintf("%.7d %s", info["cpuMHz"], "MHz each core") )
 
-		say( sprintf("%.7d %s", info["cpuMHz"] * alength_min_1(core_id) * physical_cpus, "MHz total") )
+    say( sprintf("%.7d %s", info["cpuMHz"] * alength_min_1(core_id) * physical_cpus, "MHz total") )
 
-		if ( count["processor"] > 1 )
-			say( sprintf("%.7d %s", info["bogomips"], "Bogomips each processor (including virtual)") )
+    if ( count["processor"] > 1 )
+      say( sprintf("%.7d %s", info["bogomips"], "Bogomips each processor (including virtual)") )
 
-		say( sprintf("%.7d %s", info["bogomips"] * alength_min_1(core_id) * physical_cpus, "Bogomips total") )
-		say()
-	}
+    say( sprintf("%.7d %s", info["bogomips"] * alength_min_1(core_id) * physical_cpus, "Bogomips total") )
+    say()
+  }
 
 ' /proc/cpuinfo
