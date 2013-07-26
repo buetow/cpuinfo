@@ -1,5 +1,5 @@
-cpuinfo (0.0.0) stable; urgency=low
+cpuinfo (1.0.0) stable; urgency=low
 
-  * Initial version of the template
+  * Initial Debian package of cpuinfo.
 
- -- Paul Buetow <paul@buetow.org>  Fri, 04 Jan 2013 07:53:32 +0100
+ -- Paul Buetow <paul@buetow.org>  Fri, 26 Jul 2013 09:08:03 +0200
