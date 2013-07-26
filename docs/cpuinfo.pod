@@ -1,16 +1,15 @@
 =head1 NAME
 
-Cbars - A small and humble tool to observe server loads
+cpuinfo - A small and humble tool to print out CPU data
 
 =head1 SYNOPSIS
 
-cpuinfo [LIST OF HOSTNAMES] 
+cpuinfo 
 
-=head2 Tested platforms
+=head2 How this works?
 
-This version of Cbars has only been tested on Debian GNU/Linux Wheezy.
-
-There is no release made yet atm. So please come back later and don't use this yet.
+This just invokes AWK to parse /proc/cpuinfo and prints out some stuff but
+human readable.
 
 =head1 LICENSE
 

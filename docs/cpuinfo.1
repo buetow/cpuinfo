@@ -130,15 +130,14 @@
 .if n .ad l
 .nh
 .SH "NAME"
-Cbars \- A small and humble tool to observe server loads
+cpuinfo \- A small and humble tool to print out CPU data
 .SH "SYNOPSIS"
 .IX Header "SYNOPSIS"
-cpuinfo [\s-1LIST\s0 \s-1OF\s0 \s-1HOSTNAMES\s0]
-.SS "Tested platforms"
-.IX Subsection "Tested platforms"
-This version of Cbars has only been tested on Debian GNU/Linux Wheezy.
-.PP
-There is no release made yet atm. So please come back later and don't use this yet.
+cpuinfo
+.SS "How this works?"
+.IX Subsection "How this works?"
+This just invokes \s-1AWK\s0 to parse /proc/cpuinfo and prints out some stuff but
+human readable.
 .SH "LICENSE"
 .IX Header "LICENSE"
 See package description or project website.
