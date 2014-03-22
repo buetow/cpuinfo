@@ -5,8 +5,7 @@ Maintainer: Paul Buetow <paul@buetow.org>
 Build-Depends: perl, make
 Standards-Version: 3.9.2
 Homepage: http://cpuinfo.buetow.org
-Vcs-Git: https://github.com/rantanplan/cpuinfo
-Vcs-Browser: https://github.com/rantanplan/cpuinfo
+Vcs-Git: https://github.com/rantanplan/cpuinfo.git
 Vcs-Browser: https://github.com/rantanplan/cpuinfo
 
 Package: cpuinfo
