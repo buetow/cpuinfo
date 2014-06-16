@@ -40,6 +40,7 @@ dch:
 
 dput:
 	dput -u wheezy-buetowdotorg ../$(NAME)_$$(cat ./.version)_amd64.changes
+	dput -u jessie-buetowdotorg ../$(NAME)_$$(cat ./.version)_amd64.changes
 
 release: dch deb dput
 	bash -c "git tag $$(cat .version)"

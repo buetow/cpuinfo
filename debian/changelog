@@ -1,3 +1,9 @@
+cpuinfo (1.0.1) stable; urgency=low
+
+  * Add Debian GNU/Linux Jessie package
+
+ -- Paul Buetow <paul@buetow.org>  Mon, 16 Jun 2014 09:11:33 +0200
+
 cpuinfo (1.0.0) stable; urgency=low
 
   * Initial Debian package of cpuinfo.
