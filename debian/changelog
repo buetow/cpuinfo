@@ -1,3 +1,9 @@
+cpuinfo (1.0.2) stable; urgency=low
+
+  * Add README.pod for Github page
+
+ -- Paul Buetow <paul@buetow.org>  Sun, 22 Jun 2014 11:36:37 +0200
+
 cpuinfo (1.0.1) stable; urgency=low
 
   * Add Debian GNU/Linux Jessie package
